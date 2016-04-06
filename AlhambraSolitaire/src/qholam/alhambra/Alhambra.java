@@ -58,7 +58,7 @@ public class Alhambra extends Solitaire{
 	/** View for the score **/
 	protected IntegerView scoreView;
 	
-	/** View for the number of cards in deck **/
+	/** View for the number of cards in deck **/ 
 	protected IntegerView numLeftView;
 	
 	/** Code to launch solitaire variation. */
