@@ -31,14 +31,21 @@ public class DeckController extends SolitaireReleasedAdapter{
 		//Get the move that is to be made
 		//Check if deck is empty
 		if(d.empty()){//reassemble deck
-			move = new ReassembleDeckMove(d, p);
+			//check if player has done more than 2 redeals
+			if(((Alhambra) this.theGame).getNumRedeals() > 1){
+				
+			}
+			else{
+				move = new ReassembleDeckMove(d, p);
+				((Alhambra) this.theGame).updateNumRedeals(1);
+			}
 		}
 		else//deck is not empty
 			move = new DealOneMove(d, p);
 		
 		
 		//Check if move was successfully made
-		if(move.doMove(theGame))
+		if(move != null && move.doMove(theGame))
 			//move success push to game
 			this.theGame.pushMove(move);
 		

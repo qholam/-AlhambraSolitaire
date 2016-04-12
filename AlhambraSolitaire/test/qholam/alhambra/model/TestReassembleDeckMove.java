@@ -1,5 +1,7 @@
 package qholam.alhambra.model;
 
-public class TestReassembleDeckMove {
+import junit.framework.TestCase;
+
+public class TestReassembleDeckMove extends TestCase{
 
 }

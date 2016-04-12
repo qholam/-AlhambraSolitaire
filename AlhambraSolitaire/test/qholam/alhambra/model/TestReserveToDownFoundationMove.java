@@ -1,5 +1,7 @@
 package qholam.alhambra.model;
 
-public class TestReserveToDownFoundationMove {
+import junit.framework.TestCase;
+
+public class TestReserveToDownFoundationMove extends TestCase{
 
 }

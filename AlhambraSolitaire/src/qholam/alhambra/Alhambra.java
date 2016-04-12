@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import ks.client.gamefactory.GameWindow;
 import ks.common.controller.SolitaireReleasedAdapter;
 import ks.common.games.Solitaire;
+import ks.common.model.Card;
 import ks.common.model.Column;
 import ks.common.model.Deck;
 import ks.common.model.MultiDeck;
@@ -94,17 +95,21 @@ public class Alhambra extends Solitaire{
 		initializeControllers();
 
 		/*PREPARE GAME*/
+		//set up the foundations
+		addCardFromDeck(new Card(Card.ACE, Card.SPADES), up1);
+		addCardFromDeck(new Card(Card.ACE, Card.CLUBS), up2);
+		addCardFromDeck(new Card(Card.ACE, Card.HEARTS), up3);
+		addCardFromDeck(new Card(Card.ACE, Card.DIAMONDS), up4);
+		addCardFromDeck(new Card(Card.KING, Card.SPADES), down1);
+		addCardFromDeck(new Card(Card.KING, Card.CLUBS), down2);
+		addCardFromDeck(new Card(Card.KING, Card.HEARTS), down3);
+		addCardFromDeck(new Card(Card.KING, Card.DIAMONDS), down4);
+
 		waste.add(deck.get());
-		up1.add(deck.get());
-		up2.add(deck.get());
-		up3.add(deck.get());
-		up4.add(deck.get());
-		down1.add(deck.get());
-		down2.add(deck.get());
-		down3.add(deck.get());
-		down4.add(deck.get());
-		// we have dealt nine cards
-		updateNumberCardsLeft (-9);
+		// we have dealt one card to the waste pile
+		updateNumberCardsLeft (-1);
+						
+		//add cards to the reserve column, each reserve column should have 4 cards
 		for(int i = 0; i < 4; i++){
 			reserve1.add(deck.get());
 			reserve2.add(deck.get());
@@ -119,6 +124,51 @@ public class Alhambra extends Solitaire{
 		}
 	}
 
+	
+	/**
+	 * Find the given card within the deck and adds it to the pile
+	 * @param card Card in deck to be added
+	 * @param pile Pile in which card will be added too
+	 */
+	public void addCardFromDeck(Card card, Pile pile){
+		//determines whether card was found
+		boolean cardFound = false;
+		//get the size of the deck
+		int size = deck.count();
+		//temp deck to stored the popped cards
+		MultiDeck tempDeck = new MultiDeck(2);
+		
+		//go through deck to find the card
+		for(int i = 0; i < size; i++){
+			//get top card
+			Card c = deck.get();
+			
+			//Check if correct card is found add it to the pile
+			if(c.equals(card)){
+				pile.add(c);
+				
+				//card was found
+				cardFound = true;
+				
+				//break out of loop
+				break;
+			}
+			else{
+				tempDeck.add(c);
+			}
+		}
+		
+		//move the cards from the temp deck back into the main deck
+		int tempSize = tempDeck.count();
+		for(int i = 0; i < tempSize; i++){
+			deck.add(tempDeck.get());
+		}
+		
+		//if the card was found update the number of cards in the deck
+		if(cardFound){
+			this.updateNumberCardsLeft(-1);
+		}
+	}
 	/**
 	 * initialize the models
 	 * @param seed Seed used to shuffle deck
@@ -304,6 +354,14 @@ public class Alhambra extends Solitaire{
 		return numRedeals;
 	}
 	
+	
+	/**
+	 * update number of redeals
+	 * @param i To be added to current number of redeals
+	 */
+	public void updateNumRedeals(int i){
+		numRedeals += i;
+	}
 	/**
 	 * Initialize the controllers
 	 */

@@ -1,5 +1,7 @@
 package qholam.alhambra.model;
 
-public class TestReserveToWastePileMove {
+import junit.framework.TestCase;
+
+public class TestReserveToWastePileMove extends TestCase{
 
 }

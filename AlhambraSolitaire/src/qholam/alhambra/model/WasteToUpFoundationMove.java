@@ -80,7 +80,7 @@ public class WasteToUpFoundationMove extends Move{
 			validMove = false;
 		
 		//checks if the foundation pile is an ace
-		if(topCard.isAce())
+		if(topCard.isKing())
 			validMove = false;
 		
 		//makes sure the top card of the foundation pile is of the same suite and one pointer

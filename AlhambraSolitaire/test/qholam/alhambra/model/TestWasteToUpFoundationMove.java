@@ -1,5 +1,7 @@
 package qholam.alhambra.model;
 
-public class TestWasteToUpFoundationMove {
+import junit.framework.TestCase;
+
+public class TestWasteToUpFoundationMove extends TestCase{
 
 }

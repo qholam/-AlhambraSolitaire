@@ -15,6 +15,7 @@ public class ReserveColumnController extends SolitaireReleasedAdapter{
 	public ReserveColumnController(Solitaire theGame, ColumnView c) {
 		super(theGame);
 		
+		game = theGame;
 		reserve = c;
 	}
 	
