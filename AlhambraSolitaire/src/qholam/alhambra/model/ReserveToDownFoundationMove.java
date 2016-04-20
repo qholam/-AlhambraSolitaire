@@ -79,16 +79,16 @@ public class ReserveToDownFoundationMove extends Move{
 		
 		//foundation is empty
 		if(downFoundation.empty())
-			validMove = false;
+			return false;
 		
 		//checks if the foundation pile is an ace
 		if(topCard.isAce())
-			validMove = false;
+			return false;
 		
 		//makes sure the top card of the foundation pile is of the same suite and one pointer
 		//higher than the card being dragged
 		if(!topCard.sameSuit(cardBeingDragged) || topCard.compareTo(cardBeingDragged) != 1)
-			validMove = false;
+			return false;
 		
 		return validMove;
 	}

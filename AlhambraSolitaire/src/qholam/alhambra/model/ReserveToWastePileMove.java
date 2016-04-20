@@ -74,7 +74,7 @@ public class ReserveToWastePileMove extends Move{
 		
 		//checks if the waste pile is empty
 		if(waste.empty())
-			valid = false;
+			return false;
 		
 		/*Ensure the top card of waste pile and card being dragged
 		are same suite and one point apart*/
@@ -87,7 +87,7 @@ public class ReserveToWastePileMove extends Move{
 		//ensures cards are one point apart(King wraps to Ace)
 		if(Math.abs(top.compareTo(cardBeingDragged)) != 1){
 			//compareTo method does not account for the wrapping of king to ace, need to check
-			if(top.isKing() && cardBeingDragged.isAce()){}//do nothing
+			if(top.getRank() == Card.KING && cardBeingDragged.isAce()){}//do nothing
 			else{//Cards are not one point apart
 				valid = false;
 			}

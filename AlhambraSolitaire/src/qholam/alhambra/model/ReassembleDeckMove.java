@@ -62,14 +62,14 @@ public class ReassembleDeckMove extends Move{
 
 	@Override
 	/**
-	* Check if deck is empty, making the move valid to be made
+	* Check if deck is empty and waste is not empty, making the move valid to be made
 	* @param game The game being played
 	* @return boolean Returns true if the deck is empty 
 	*/
 	public boolean valid(Solitaire game) {
 		boolean deckEmpty = false;
 		
-		if(deck.empty())
+		if(deck.empty() && !waste.empty())
 			deckEmpty = true;
 		
 		return deckEmpty;

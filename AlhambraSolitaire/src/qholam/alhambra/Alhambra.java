@@ -83,7 +83,7 @@ public class Alhambra extends Solitaire{
 	 * @return boolean Returns true if win conditions for game is met.
 	 */
 	public boolean hasWon() {
-		return up1.peek().isKing() && up2.peek().isKing() && up3.peek().isKing() && up4.peek().isKing() &&
+		return up1.peek().getRank() == Card.KING && up2.peek().getRank() == Card.KING && up3.peek().getRank() == Card.KING && up4.peek().getRank() == Card.KING &&
 			   down1.peek().isAce() && down2.peek().isAce() && down3.peek().isAce() && down4.peek().isAce();
 	}
 
@@ -399,5 +399,544 @@ public class Alhambra extends Solitaire{
 		
 		//Controller for view of number cards in deck
 		numLeftView.setMouseAdapter(new SolitaireReleasedAdapter(this));
+	}
+
+	/**
+	 * @return the deck
+	 */
+	public MultiDeck getDeck() {
+		return deck;
+	}
+
+	/**
+	 * @param deck the deck to set
+	 */
+	public void setDeck(MultiDeck deck) {
+		this.deck = deck;
+	}
+
+	/**
+	 * @return the waste
+	 */
+	public Pile getWaste() {
+		return waste;
+	}
+
+	/**
+	 * @param waste the waste to set
+	 */
+	public void setWaste(Pile waste) {
+		this.waste = waste;
+	}
+
+	/**
+	 * @return the reserve1
+	 */
+	public Column getReserve1() {
+		return reserve1;
+	}
+
+	/**
+	 * @param reserve1 the reserve1 to set
+	 */
+	public void setReserve1(Column reserve1) {
+		this.reserve1 = reserve1;
+	}
+
+	/**
+	 * @return the reserve2
+	 */
+	public Column getReserve2() {
+		return reserve2;
+	}
+
+	/**
+	 * @param reserve2 the reserve2 to set
+	 */
+	public void setReserve2(Column reserve2) {
+		this.reserve2 = reserve2;
+	}
+
+	/**
+	 * @return the reserve3
+	 */
+	public Column getReserve3() {
+		return reserve3;
+	}
+
+	/**
+	 * @param reserve3 the reserve3 to set
+	 */
+	public void setReserve3(Column reserve3) {
+		this.reserve3 = reserve3;
+	}
+
+	/**
+	 * @return the reserve4
+	 */
+	public Column getReserve4() {
+		return reserve4;
+	}
+
+	/**
+	 * @param reserve4 the reserve4 to set
+	 */
+	public void setReserve4(Column reserve4) {
+		this.reserve4 = reserve4;
+	}
+
+	/**
+	 * @return the reserve5
+	 */
+	public Column getReserve5() {
+		return reserve5;
+	}
+
+	/**
+	 * @param reserve5 the reserve5 to set
+	 */
+	public void setReserve5(Column reserve5) {
+		this.reserve5 = reserve5;
+	}
+
+	/**
+	 * @return the reserve6
+	 */
+	public Column getReserve6() {
+		return reserve6;
+	}
+
+	/**
+	 * @param reserve6 the reserve6 to set
+	 */
+	public void setReserve6(Column reserve6) {
+		this.reserve6 = reserve6;
+	}
+
+	/**
+	 * @return the reserve7
+	 */
+	public Column getReserve7() {
+		return reserve7;
+	}
+
+	/**
+	 * @param reserve7 the reserve7 to set
+	 */
+	public void setReserve7(Column reserve7) {
+		this.reserve7 = reserve7;
+	}
+
+	/**
+	 * @return the reserve8
+	 */
+	public Column getReserve8() {
+		return reserve8;
+	}
+
+	/**
+	 * @param reserve8 the reserve8 to set
+	 */
+	public void setReserve8(Column reserve8) {
+		this.reserve8 = reserve8;
+	}
+
+	/**
+	 * @return the up1
+	 */
+	public Pile getUp1() {
+		return up1;
+	}
+
+	/**
+	 * @param up1 the up1 to set
+	 */
+	public void setUp1(Pile up1) {
+		this.up1 = up1;
+	}
+
+	/**
+	 * @return the up2
+	 */
+	public Pile getUp2() {
+		return up2;
+	}
+
+	/**
+	 * @param up2 the up2 to set
+	 */
+	public void setUp2(Pile up2) {
+		this.up2 = up2;
+	}
+
+	/**
+	 * @return the up3
+	 */
+	public Pile getUp3() {
+		return up3;
+	}
+
+	/**
+	 * @param up3 the up3 to set
+	 */
+	public void setUp3(Pile up3) {
+		this.up3 = up3;
+	}
+
+	/**
+	 * @return the up4
+	 */
+	public Pile getUp4() {
+		return up4;
+	}
+
+	/**
+	 * @param up4 the up4 to set
+	 */
+	public void setUp4(Pile up4) {
+		this.up4 = up4;
+	}
+
+	/**
+	 * @return the down1
+	 */
+	public Pile getDown1() {
+		return down1;
+	}
+
+	/**
+	 * @param down1 the down1 to set
+	 */
+	public void setDown1(Pile down1) {
+		this.down1 = down1;
+	}
+
+	/**
+	 * @return the down2
+	 */
+	public Pile getDown2() {
+		return down2;
+	}
+
+	/**
+	 * @param down2 the down2 to set
+	 */
+	public void setDown2(Pile down2) {
+		this.down2 = down2;
+	}
+
+	/**
+	 * @return the down3
+	 */
+	public Pile getDown3() {
+		return down3;
+	}
+
+	/**
+	 * @param down3 the down3 to set
+	 */
+	public void setDown3(Pile down3) {
+		this.down3 = down3;
+	}
+
+	/**
+	 * @return the down4
+	 */
+	public Pile getDown4() {
+		return down4;
+	}
+
+	/**
+	 * @param down4 the down4 to set
+	 */
+	public void setDown4(Pile down4) {
+		this.down4 = down4;
+	}
+
+	/**
+	 * @return the deckView
+	 */
+	public DeckView getDeckView() {
+		return deckView;
+	}
+
+	/**
+	 * @param deckView the deckView to set
+	 */
+	public void setDeckView(DeckView deckView) {
+		this.deckView = deckView;
+	}
+
+	/**
+	 * @return the wasteView
+	 */
+	public PileView getWasteView() {
+		return wasteView;
+	}
+
+	/**
+	 * @param wasteView the wasteView to set
+	 */
+	public void setWasteView(PileView wasteView) {
+		this.wasteView = wasteView;
+	}
+
+	/**
+	 * @return the reserveView1
+	 */
+	public ColumnView getReserveView1() {
+		return reserveView1;
+	}
+
+	/**
+	 * @param reserveView1 the reserveView1 to set
+	 */
+	public void setReserveView1(ColumnView reserveView1) {
+		this.reserveView1 = reserveView1;
+	}
+
+	/**
+	 * @return the reserveView2
+	 */
+	public ColumnView getReserveView2() {
+		return reserveView2;
+	}
+
+	/**
+	 * @param reserveView2 the reserveView2 to set
+	 */
+	public void setReserveView2(ColumnView reserveView2) {
+		this.reserveView2 = reserveView2;
+	}
+
+	/**
+	 * @return the reserveView3
+	 */
+	public ColumnView getReserveView3() {
+		return reserveView3;
+	}
+
+	/**
+	 * @param reserveView3 the reserveView3 to set
+	 */
+	public void setReserveView3(ColumnView reserveView3) {
+		this.reserveView3 = reserveView3;
+	}
+
+	/**
+	 * @return the reserveView4
+	 */
+	public ColumnView getReserveView4() {
+		return reserveView4;
+	}
+
+	/**
+	 * @param reserveView4 the reserveView4 to set
+	 */
+	public void setReserveView4(ColumnView reserveView4) {
+		this.reserveView4 = reserveView4;
+	}
+
+	/**
+	 * @return the reserveView5
+	 */
+	public ColumnView getReserveView5() {
+		return reserveView5;
+	}
+
+	/**
+	 * @param reserveView5 the reserveView5 to set
+	 */
+	public void setReserveView5(ColumnView reserveView5) {
+		this.reserveView5 = reserveView5;
+	}
+
+	/**
+	 * @return the reserveView6
+	 */
+	public ColumnView getReserveView6() {
+		return reserveView6;
+	}
+
+	/**
+	 * @param reserveView6 the reserveView6 to set
+	 */
+	public void setReserveView6(ColumnView reserveView6) {
+		this.reserveView6 = reserveView6;
+	}
+
+	/**
+	 * @return the reserveView7
+	 */
+	public ColumnView getReserveView7() {
+		return reserveView7;
+	}
+
+	/**
+	 * @param reserveView7 the reserveView7 to set
+	 */
+	public void setReserveView7(ColumnView reserveView7) {
+		this.reserveView7 = reserveView7;
+	}
+
+	/**
+	 * @return the reserveView8
+	 */
+	public ColumnView getReserveView8() {
+		return reserveView8;
+	}
+
+	/**
+	 * @param reserveView8 the reserveView8 to set
+	 */
+	public void setReserveView8(ColumnView reserveView8) {
+		this.reserveView8 = reserveView8;
+	}
+
+	/**
+	 * @return the upView1
+	 */
+	public PileView getUpView1() {
+		return upView1;
+	}
+
+	/**
+	 * @param upView1 the upView1 to set
+	 */
+	public void setUpView1(PileView upView1) {
+		this.upView1 = upView1;
+	}
+
+	/**
+	 * @return the upView2
+	 */
+	public PileView getUpView2() {
+		return upView2;
+	}
+
+	/**
+	 * @param upView2 the upView2 to set
+	 */
+	public void setUpView2(PileView upView2) {
+		this.upView2 = upView2;
+	}
+
+	/**
+	 * @return the upView3
+	 */
+	public PileView getUpView3() {
+		return upView3;
+	}
+
+	/**
+	 * @param upView3 the upView3 to set
+	 */
+	public void setUpView3(PileView upView3) {
+		this.upView3 = upView3;
+	}
+
+	/**
+	 * @return the upView4
+	 */
+	public PileView getUpView4() {
+		return upView4;
+	}
+
+	/**
+	 * @param upView4 the upView4 to set
+	 */
+	public void setUpView4(PileView upView4) {
+		this.upView4 = upView4;
+	}
+
+	/**
+	 * @return the downView1
+	 */
+	public PileView getDownView1() {
+		return downView1;
+	}
+
+	/**
+	 * @param downView1 the downView1 to set
+	 */
+	public void setDownView1(PileView downView1) {
+		this.downView1 = downView1;
+	}
+
+	/**
+	 * @return the downView2
+	 */
+	public PileView getDownView2() {
+		return downView2;
+	}
+
+	/**
+	 * @param downView2 the downView2 to set
+	 */
+	public void setDownView2(PileView downView2) {
+		this.downView2 = downView2;
+	}
+
+	/**
+	 * @return the downView3
+	 */
+	public PileView getDownView3() {
+		return downView3;
+	}
+
+	/**
+	 * @param downView3 the downView3 to set
+	 */
+	public void setDownView3(PileView downView3) {
+		this.downView3 = downView3;
+	}
+
+	/**
+	 * @return the downView4
+	 */
+	public PileView getDownView4() {
+		return downView4;
+	}
+
+	/**
+	 * @param downView4 the downView4 to set
+	 */
+	public void setDownView4(PileView downView4) {
+		this.downView4 = downView4;
+	}
+
+	/**
+	 * @return the scoreView
+	 */
+	public IntegerView getScoreView() {
+		return scoreView;
+	}
+
+	/**
+	 * @param scoreView the scoreView to set
+	 */
+	public void setScoreView(IntegerView scoreView) {
+		this.scoreView = scoreView;
+	}
+
+	/**
+	 * @return the numLeftView
+	 */
+	public IntegerView getNumLeftView() {
+		return numLeftView;
+	}
+
+	/**
+	 * @param numLeftView the numLeftView to set
+	 */
+	public void setNumLeftView(IntegerView numLeftView) {
+		this.numLeftView = numLeftView;
+	}
+
+	/**
+	 * @param numRedeals the numRedeals to set
+	 */
+	public void setNumRedeals(int numRedeals) {
+		this.numRedeals = numRedeals;
 	}
 }

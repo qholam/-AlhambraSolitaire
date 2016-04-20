@@ -77,7 +77,7 @@ public class WasteToDownFoundationMove extends Move{
 		
 		//checks if foundation is empty
 		if(downFoundation.empty())
-			validMove = false;
+			return false;
 		
 		//checks if the foundation pile is an ace
 		if(topCard.isAce())

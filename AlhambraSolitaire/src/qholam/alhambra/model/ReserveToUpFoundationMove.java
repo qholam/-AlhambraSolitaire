@@ -79,11 +79,11 @@ public class ReserveToUpFoundationMove extends Move{
 		
 		//checks if foundation is empty
 		if(upFoundation.empty())
-			validMove = false;
+			return false;
 		
 		//checks if the foundation pile is a king
-		if(topCard.isKing())
-			validMove = false;
+		if(topCard.getRank() == Card.KING)
+			return false;
 		
 		//makes sure the top card of the foundation pile is of the same suite and one pointer
 		//lower than the card being dragged

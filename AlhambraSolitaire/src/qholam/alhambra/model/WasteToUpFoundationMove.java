@@ -77,10 +77,10 @@ public class WasteToUpFoundationMove extends Move{
 		
 		//checks if foundation is empty
 		if(upFoundation.empty())
-			validMove = false;
+			return false;
 		
 		//checks if the foundation pile is an ace
-		if(topCard.isKing())
+		if(topCard.getRank() == Card.KING)
 			validMove = false;
 		
 		//makes sure the top card of the foundation pile is of the same suite and one pointer

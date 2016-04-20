@@ -7,9 +7,9 @@ import ks.common.games.Solitaire;
 import ks.common.model.Move;
 import ks.common.model.MultiDeck;
 import ks.common.model.Pile;
+import qholam.alhambra.Alhambra;
 import qholam.alhambra.model.DealOneMove;
 import qholam.alhambra.model.ReassembleDeckMove;
-import qholam.alhambra.Alhambra;
 
 public class DeckController extends SolitaireReleasedAdapter{
 	public DeckController(Solitaire game) {
